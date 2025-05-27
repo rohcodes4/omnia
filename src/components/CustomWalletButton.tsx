@@ -10,7 +10,6 @@ const CustomWalletButton = () => {
   const activeWallet = wallets?.[0];
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
       dropdownRef.current &&
@@ -78,7 +77,7 @@ const CustomWalletButton = () => {
           >
             My Podcasts
           </button>
-          <button
+          {/* <button
             onClick={() => {
               navigator.clipboard.writeText(activeWallet?.address || "");
               setShowDropdown(false);
@@ -86,7 +85,7 @@ const CustomWalletButton = () => {
             className="block w-full px-4 py-2 text-left text-sm text-[#3246DC] hover:bg-gray-100 dark:text-[#3246DC] font-source-code-pro font-bold dark:hover:bg-[#3246dc28]"
           >
             Copy Address
-          </button>
+          </button> */}
           <button
             onClick={() => {
               logout();
