@@ -56,7 +56,7 @@ const FooterBottom = () => {
         </motion.div>
 
         <motion.div
-          className="flex items-center gap-8 w-[140px] md:w-auto justify-between xl: md:justify-start"
+          className="flex items-center gap-8 w-max md:w-auto justify-between xl: md:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -67,7 +67,7 @@ const FooterBottom = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[14px] h-[14px] xl:w-[23px] xl:h-[23px] 2xl:w-[14px] 2xl:h-[14px] hover:text-[#3246DC] transition-colors duration-300"
+              className="w-[18px] h-[18px] xl:w-[23px] xl:h-[23px] 2xl:w-[23px] 2xl:h-[23px] hover:text-[#3246DC] transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               aria-label={label}
@@ -75,9 +75,9 @@ const FooterBottom = () => {
               <Image
                 src={iconSrc}
                 alt={label}
-                width={14}
-                height={14}
-                className="w-full h-full xl:w-[23px] xl:h-[23px] 2xl:w-[14px] 2xl:h-[14px] object-contain"
+                width={18}
+                height={18}
+                className="w-full h-full xl:w-[23px] xl:h-[23px] 2xl:w-[23px] 2xl:h-[23px] object-contain"
               />
             </motion.a>
           ))}

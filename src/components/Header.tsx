@@ -6,12 +6,18 @@ import Navigation from "./Navigation";
 import { useNavigation } from "@/context/NavigationContext";
 import Link from "next/link";
 import CustomWalletButton from "./CustomWalletButton";
+import { useSolanaWallets } from '@privy-io/react-auth';
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const { shouldOpenNav, isNavOpen, setIsNavOpen, handleNavClose } =
     useNavigation();
   const [currentDateTime, setCurrentDateTime] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const { wallets } = useSolanaWallets();
+  const activeWallet = wallets?.[0];
+  const router = useRouter();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -113,11 +119,20 @@ const Header = () => {
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-3 md:gap-6"
+            className="flex items-center gap-3 md:gap-6 relative"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <button
+            onClick={() => {
+              router.push(`/space/podcast/${activeWallet?.address}`);
+              setShowDropdown(false);
+            }}
+            className="absolute top-0 right-[110%] w-max px-4 py-[10px] border-[#3246DC] border-2 rounded-md text-center text-sm text-[#3246DC] hover:bg-gray-100 dark:text-[#3246DC] font-source-code-pro font-bold dark:hover:bg-[#3246dc28]"
+          >
+            My Podcasts
+          </button>
             <CustomWalletButton />
             <div className="relative w-[28px] h-[24px]">
               <button

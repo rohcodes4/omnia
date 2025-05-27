@@ -65,7 +65,7 @@ const AddCustomValue = ({
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC]"
+        className="w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC]"
         onKeyDown={(e) => {
           if (e.key === "Enter") handleAdd();
           if (e.key === "Escape") setIsAdding(false);
@@ -84,7 +84,7 @@ const AddCustomValue = ({
   ) : (
     <Badge
       variant="outline"
-      className="px-[11px] py-[10.5px] rounded font-source-code-pro text-xs font-bold leading-[15px]  cursor-pointer text-[#3246DC] dark:text-[#3246DC] border border-[#3246DC] dark:border-[#3246DC]"
+      className="px-[11px] py-[10.5px] rounded font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px]  cursor-pointer text-[#3246DC] dark:text-[#3246DC] border border-[#3246DC] dark:border-[#3246DC]"
       onClick={() => setIsAdding(true)}
     >
       <Plus className="mr-1 h-3 w-3" /> Add Custom
@@ -450,12 +450,12 @@ const CustomPodcast = () => {
           <Card className="border-none rounded bg-[#111111]  dark:bg-[#111111]">
             <CardContent className="space-y-6 p-6">
               <div className="space-y-4">
-                <h3 className="font-source-code-pro text-base font-bold text-[#3246DC] leading-6 text-left decoration-skip-ink-none">
+                <h3 className="font-source-code-pro text-base md:text-xl font-bold text-[#3246DC] leading-6 text-left decoration-skip-ink-none">
                   Podcast Identity
                 </h3>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div className="flex flex-col gap-2">
-                    <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                    <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                       Podcast Name *
                     </Label>
                     <Input
@@ -463,7 +463,7 @@ const CustomPodcast = () => {
                       name="podcast_name"
                       value={formData.podcast_name}
                       onChange={handleInputChange}
-                      className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
+                      className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
                         fieldErrors.podcast_name
                           ? "border-red-500 focus:ring-red-500 dark:border-red-400"
                           : ""
@@ -472,7 +472,7 @@ const CustomPodcast = () => {
                     <FieldError message={fieldErrors.podcast_name} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                    <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                       Podcast Tagline *
                     </Label>
                     <Input
@@ -480,7 +480,7 @@ const CustomPodcast = () => {
                       name="podcast_tagline"
                       value={formData.podcast_tagline}
                       onChange={handleInputChange}
-                      className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
+                      className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
                         fieldErrors.podcast_tagline
                           ? "border-red-500 focus:ring-red-500 dark:border-red-400"
                           : ""
@@ -493,7 +493,7 @@ const CustomPodcast = () => {
 
               <div className="space-y-4">
                 <div className="flex flex-col gap-2">
-                  <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                  <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                     Text Input *
                   </Label>
                   <textarea
@@ -501,7 +501,8 @@ const CustomPodcast = () => {
                     value={formData.text_input}
                     onChange={handleInputChange}
                     rows={3}
-                    className={`w-full rounded h-[140px] !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
+                    className={`w-full rounded h-[140px] !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
+                    // className={`w-full rounded h-[140px] !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
                       fieldErrors.content && !formData.urls_input
                         ? "border-red-500 focus:ring-red-500 dark:border-red-400"
                         : ""
@@ -511,7 +512,7 @@ const CustomPodcast = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                  <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                     URLs *
                   </Label>
                   <textarea
@@ -519,20 +520,20 @@ const CustomPodcast = () => {
                     value={formData.urls_input}
                     onChange={handleInputChange}
                     rows={3}
-                    className={`w-full rounded !border h-[140px] !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
+                    className={`w-full rounded !border h-[140px] !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC] ${
                       fieldErrors.content && !formData.text_input
                         ? "border-red-500 focus:ring-red-500 dark:border-red-400"
                         : ""
                     }`}
                     placeholder="Enter URLs (one per line) - supports websites and YouTube videos"
                   />
-                  <p className="font-source-code-pro text-xs font-medium leading-[15px] text-left text-[#3246DC]">
+                  <p className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium leading-[15px] text-left text-[#3246DC]">
                     * Either Text Input or URLs is required
                   </p>
                 </div>
 
                 <div className="w-full space-y-2">
-                  <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                  <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                     Language *
                   </Label>
                   <div className="flex flex-wrap gap-2">
@@ -542,7 +543,7 @@ const CustomPodcast = () => {
                         variant={
                           selectedLanguage === lang ? "default" : "outline"
                         }
-                        className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs font-bold leading-[15px]  cursor-pointer ${
+                        className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px]  cursor-pointer ${
                           selectedLanguage === lang
                             ? "text-[#111111] dark:bg-[#3246DC] bg-[#3246DC]"
                             : "text-[#3246DC] dark:text-[#3246DC] border border-[#3246DC] dark:border-[#3246DC]"
@@ -581,7 +582,7 @@ const CustomPodcast = () => {
                       Basic Settings
                     </h3>
                     <div className="flex flex-col gap-2">
-                      <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                      <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                         Word Count: {formData.word_count}
                       </Label>
                       <Input
@@ -597,7 +598,7 @@ const CustomPodcast = () => {
                     </div>
 
                     <div className="w-full space-y-2">
-                      <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                      <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                         Conversation Style (Select up to {MAX_STYLE_SELECTIONS})
                       </Label>
                       <div className="flex flex-wrap gap-2">
@@ -609,7 +610,7 @@ const CustomPodcast = () => {
                                 ? "default"
                                 : "outline"
                             }
-                            className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs font-bold leading-[15px]  cursor-pointer ${
+                            className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px]  cursor-pointer ${
                               selectedStyles.includes(style)
                                 ? "text-[#111111] dark:bg-[#3246DC] bg-[#3246DC]"
                                 : "text-[#3246DC] dark:text-[#3246DC] border border-[#3246DC] dark:border-[#3246DC]"
@@ -645,7 +646,7 @@ const CustomPodcast = () => {
                     <div className="space-y-2">
                       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div className="flex flex-col gap-2">
-                          <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                          <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                             Role of First Speaker
                           </Label>
                           <Input
@@ -653,11 +654,11 @@ const CustomPodcast = () => {
                             name="roles_person1"
                             value={formData.roles_person1}
                             onChange={handleInputChange}
-                            className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
+                            className={`w-full rounded !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
                           />
                         </div>
                         <div className="flex flex-col gap-2">
-                          <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                          <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                             Role of Second Speaker
                           </Label>
                           <Input
@@ -665,7 +666,7 @@ const CustomPodcast = () => {
                             name="roles_person2"
                             value={formData.roles_person2}
                             onChange={handleInputChange}
-                            className={`w-full rounded !border !border-[#3246DC] !px-3 !py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
+                            className={`w-full rounded !border !border-[#3246DC] !px-3 !py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
                           />
                         </div>
                       </div>
@@ -684,7 +685,7 @@ const CustomPodcast = () => {
                                       ? "default"
                                       : "outline"
                                   }
-                                  className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs font-bold leading-[15px]  cursor-pointer ${
+                                  className={`px-[11px] py-[10.5px] rounded font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px]  cursor-pointer ${
                                     selectedStructureId === structure.id
                                       ? "text-[#111111] dark:bg-[#3246DC] bg-[#3246DC]"
                                       : "text-[#3246DC] dark:text-[#3246DC] border border-[#3246DC] dark:border-[#3246DC]"
@@ -708,7 +709,7 @@ const CustomPodcast = () => {
                       Advanced Settings
                     </h3>
                     <div className="flex flex-col gap-2">
-                      <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                      <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                         Creativity Level: {formData.creativity_level}
                       </Label>
                       <Input
@@ -723,7 +724,7 @@ const CustomPodcast = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <Label className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                      <Label className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                         Custom Instructions
                       </Label>
                       <textarea
@@ -731,7 +732,7 @@ const CustomPodcast = () => {
                         value={formData.user_instructions}
                         onChange={handleInputChange}
                         rows={2}
-                        className={`w-full rounded h-[140px] !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro !text-xs font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
+                        className={`w-full rounded h-[140px] !border !border-[#3246DC] px-3 py-2  text-[#638BEF] bg-[#111111] font-source-code-pro text-xs md:text-base 2xl:text-sm font-medium !leading-[15px] text-left placeholder:text-[#3246DC]`}
                         placeholder="Add any specific instructions to guide the conversation..."
                       />
                     </div>
@@ -757,7 +758,7 @@ const CustomPodcast = () => {
                 type="submit"
                 onClick={handleClick}
                 disabled={loading}
-                className={`flex items-center gap-2 rounded-md px-4 py-2  transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50  rounded-tl-sm  shadow-sm font-source-code-pro text-xs font-bold leading-[15px] text-left  ${
+                className={`flex items-center gap-2 rounded-md px-4 py-2  transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50  rounded-tl-sm  shadow-sm font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left  ${
                   connected
                     ? "text-[#111111] bg-[#3246DC]"
                     : "text-[#111111] bg-[#3246DC]"
@@ -816,7 +817,7 @@ const CustomPodcast = () => {
             </DialogHeader>
             <div>
               {podcastData && (
-                <div className="font-source-code-pro text-xs font-bold leading-[15px] text-left text-[#638BEF]">
+                <div className="font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left text-[#638BEF]">
                   {podcastData?.message}
                 </div>
               )}
@@ -827,7 +828,7 @@ const CustomPodcast = () => {
                     setIsStatusModalOpen(false);
                     resetForm();
                   }}
-                  className="flex items-center gap-2 rounded-md px-4 py-2 text-[#111111] bg-[#3246DC] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50  rounded-tl-sm  shadow-sm font-source-code-pro text-xs font-bold leading-[15px] text-left"
+                  className="flex items-center gap-2 rounded-md px-4 py-2 text-[#111111] bg-[#3246DC] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50  rounded-tl-sm  shadow-sm font-source-code-pro text-xs md:text-base 2xl:text-sm font-bold leading-[15px] text-left"
                 >
                   Close
                 </button>
